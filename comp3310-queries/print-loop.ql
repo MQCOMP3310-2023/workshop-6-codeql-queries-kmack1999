@@ -11,6 +11,6 @@ from LoopStmt loop,  MethodAccess call, Method method
 where
   loop.getAChild*() = call.getEnclosingStmt() and  //works now
   call.getMethod() = method and
-  method.hasName("println") and
-  method.getDeclaringType().hasQualifiedName("java.io",  "PrintStream")
-select call, "This prints to console in a loop."
+  method.hasName("Scanner") and
+  method.getDeclaringType().hasQualifiedName("java.io",  "nextLine")
+select call, "Calls to scanner.nextLine."
